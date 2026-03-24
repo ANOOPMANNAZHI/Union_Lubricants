@@ -1,0 +1,2 @@
+<img src="<?php echo e(asset('logo.png')); ?>" alt="Union Lubricants" style="width: 100%; height: auto;" />
+<?php /**PATH C:\laragon\www\union\union_lubricants\union_lubricants\resources\views/components/application-logo.blade.php ENDPATH**/ ?>

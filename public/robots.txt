@@ -1,0 +1,50 @@
+# Union Lubricants - robots.txt
+# This file tells search engines how to crawl and index the website
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow private/admin areas
+Disallow: /admin/
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /password
+Disallow: /forgot-password
+
+# Disallow specific paths that shouldn't be indexed
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /node_modules/
+
+# Allow specific areas for crawling
+Allow: /products/
+Allow: /news/
+Allow: /industries/
+Allow: /about
+Allow: /contact
+
+# Sitemap location (update with your actual domain)
+Sitemap: http://union-lubricants.local/sitemap.xml
+
+# Crawl delay (optional - set a reasonable delay to avoid overloading server)
+# Crawl-delay: 1
+
+# Specify crawl rate for specific user agents
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block bad bots (optional - uncomment as needed)
+# User-agent: MJ12bot
+# Disallow: /
+
+# User-agent: AhrefsBot
+# Disallow: /
