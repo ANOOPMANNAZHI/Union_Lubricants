@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use App\Models\Brand;
 use App\Models\ProductCategory;
 use App\Models\Setting;
 
@@ -24,11 +25,18 @@ class AppServiceProvider extends ServiceProvider
     {
         // Share categories globally with all views
         View::composer('*', function ($view) {
-            $categories = ProductCategory::all();
+            try {
+                $categories = ProductCategory::all();
+                $brands = Brand::all();
+            } catch (\Exception $e) {
+                $categories = collect();
+                $brands = collect();
+            }
             $settings = $this->getSettings();
 
             // Company Settings
             $view->with('categories', $categories);
+            $view->with('brands', $brands);
             $view->with('companyEmail', $settings['company_email'] ?? 'info@ulg.ae');
             $view->with('companyPhone', $settings['company_phone'] ?? '+971 552323282');
             $view->with('companyAddress', $settings['company_address'] ?? 'Industrial Area 2, Ajman, UAE');

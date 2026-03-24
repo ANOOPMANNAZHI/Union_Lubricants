@@ -210,7 +210,12 @@
                                 </ul>
                             </li>
                             <li class="dropdown {{ Request::routeIs('brands.index', 'brands.show') ? 'active' : '' }}">
-                                <a href="{{ route('brands.index') }}" title="Our Brands">OUR BRANDS</a>
+                                <a href="{{ route('brands.index') }}" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Our Brands">OUR BRANDS <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    @foreach($brands as $brand)
+                                    <li><a href="{{ route('brands.show', $brand->id) }}">{{ strtoupper($brand->name) }}</a></li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li class="dropdown {{ Request::routeIs('news.index', 'news.show') ? 'active' : '' }}">
                                 <a href="{{ route('news.index') }}" title="Blogs">BLOGS</a>
