@@ -212,7 +212,7 @@
                             <li class="dropdown {{ Request::routeIs('brands.index', 'brands.show') ? 'active' : '' }}">
                                 <a href="{{ route('brands.index') }}" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false" title="Our Brands">OUR BRANDS <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    @foreach($brands as $brand)
+                                    @foreach($navBrands as $brand)
                                     <li><a href="{{ route('brands.show', $brand->id) }}">{{ strtoupper($brand->name) }}</a></li>
                                     @endforeach
                                 </ul>

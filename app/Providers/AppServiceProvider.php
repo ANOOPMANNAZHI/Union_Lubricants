@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
 
             // Company Settings
             $view->with('categories', $categories);
-            $view->with('brands', $brands);
+            $view->with('navBrands', $brands);
             $view->with('companyEmail', $settings['company_email'] ?? 'info@ulg.ae');
             $view->with('companyPhone', $settings['company_phone'] ?? '+971 552323282');
             $view->with('companyAddress', $settings['company_address'] ?? 'Industrial Area 2, Ajman, UAE');
